@@ -1,0 +1,14 @@
+FROM node:alpine
+
+WORKDIR '/app'
+
+COPY package.json .
+
+RUN npm install
+
+COPY . .
+
+CMD ["npm","run","start"]
+
+#docker build -f "build the custom dcoker file"
+#docker build -f -v /app/node_modeles(ignore this folder) -v$(pwd):/app(map everything from pwd to the /app)
